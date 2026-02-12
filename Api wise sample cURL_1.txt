@@ -1,0 +1,62 @@
+Api wise cURL:
+
+1.  For POST api/dispatch/orders:
+
+
+postman request POST 'http://localhost:8080/api/dispatch/orders' \
+  --header 'Content-Type: application/json' \
+  --body '{
+    "orders": [
+      {
+        "orderId": "ORD001",
+        "latitude": 28.6139,
+        "longitude": 77.2090,
+        "address": "Connaught Place, Delhi, India",
+        "packageWeight": 15,
+        "priority": "HIGH"
+      },
+      {
+        "orderId": "ORD002",
+        "latitude": 28.5355,
+        "longitude": 77.3910,
+        "address": "Sector 18, Noida, Uttar Pradesh, India",
+        "packageWeight": 25,
+        "priority": "MEDIUM"
+      }
+    ]
+  }'
+
+
+2. POST api/dispatch/vehicles:
+
+
+postman request POST 'http://localhost:8080/api/dispatch/vehicles' \
+  --header 'Content-Type: application/json' \
+  --body '{
+    "vehicles": [
+      {
+        "vehicleId": "VEH001",
+        "capacity": 100,
+        "currentLatitude": 28.7041,
+        "currentLongitude": 77.1025,
+        "currentAddress": "Karol Bagh, Delhi, India"
+      },
+      {
+        "vehicleId": "VEH002",
+        "capacity": 80,
+        "currentLatitude": 28.5355,
+        "currentLongitude": 77.3910,
+        "currentAddress": "Sector 18, Noida, Uttar Pradesh, India"
+      }
+    ]
+  }'
+
+
+3. For GET api/dispatch/plan:
+
+postman request 'http://localhost:8080/api/dispatch/plan' \
+  --header 'Content-Type: application/json' \
+  --body '{
+    "title":"title 1",
+    "description": "description 1"
+}'
